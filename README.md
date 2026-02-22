@@ -167,22 +167,31 @@ Even within a compact implementation, separation of concerns is maintained.
 
 ### Business Analyst (BA)
 
+**Primary Stakeholders Identified:**
+
+- Employees (Anna University staff receiving salary)
+- HR Department
+- Payroll Administrators
+- Finance Department
+
+**Stakeholder Expectations:**
+
+- Employees expect accurate salary credit and timely communication.
+- HR expects reduced payroll-related queries and faster anomaly visibility.
+- Payroll administrators require validation mechanisms for unusual salary patterns.
+- Finance requires audit traceability and controlled payroll execution.
+
 **Responsibilities:**
-- Defined problem scope  
-- Identified stakeholders  
-- Converted requirements into structured user stories  
-- Framed business rules  
-- Identified operational risks  
-- Prioritized backlog  
 
-### User Stories Defined by BA
+- Defined the scope of the notification layer within ANNA PAY
+- Mapped stakeholder expectations to system capabilities
+- Converted stakeholder needs into structured user stories
+- Framed measurable business rules (threshold and variance detection)
+- Identified operational risks (duplicate alerts, silent failures, alert overload)
+- Prioritized backlog within 48-hour sprint constraint
 
-- As an employee, I want to receive an alert if my salary is unusually low so that I can immediately raise a concern.
-- As HR, I want to be notified if a salary increases or decreases drastically so that I can validate payroll accuracy.
-- As HR, I want a log of all triggered alerts so that payroll decisions remain traceable and auditable.
-- As a payroll administrator, I want abnormal salary conditions to be detected automatically so that manual monitoring is reduced.
-
-**Impact:** Ensured structured requirement understanding before coding.
+**Impact:**
+Ensured the system was built around real stakeholder needs rather than generic feature implementation.
 
 ---
 
@@ -279,4 +288,5 @@ This project demonstrates:
 * Observability by design
 
 The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
+
 
