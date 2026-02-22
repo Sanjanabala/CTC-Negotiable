@@ -30,9 +30,9 @@ However, they do not proactively detect anomalies or communicate unusual salary 
 
 This can result in:
 
-Increased HR workload
-Delayed issue detection
-Reduced transparency
+Increased HR workload, 
+Delayed issue detection, 
+Reduced transparency, 
 Lower employee confidence
 
 Our solution introduces an intelligent notification layer to address these gaps.
@@ -245,6 +245,7 @@ Structured Agile execution
 Observability by design
 
 The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
+
 
 
 
