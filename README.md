@@ -253,4 +253,30 @@ The system is structured to handle high-volume payroll scenarios.
 ## 13. How to Run Locally
 
 ### Install dependencies:
+pip install -r requirements.txt
+
+
+Run application:
+
+
+streamlit run app.py
+
+
+Open in browser:
+
+
+http://localhost:8501
+
+
+## 14. Project Philosophy
+
+This project demonstrates:
+
+* Requirement-first thinking
+* Event-driven system design
+* Risk-aware planning
+* Structured Agile execution
+* Observability by design
+
+The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
 
