@@ -19,8 +19,11 @@ The objective is to transform payroll from a silent transactional system into an
 2. Problem Statement
 
 Traditional payroll systems:
+
 Process salary
+
 Store payroll records
+
 Generate payslips
 
 However, they do not proactively detect anomalies or communicate unusual salary conditions.
@@ -242,6 +245,7 @@ Structured Agile execution
 Observability by design
 
 The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
+
 
 
 
