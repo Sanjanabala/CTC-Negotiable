@@ -2,254 +2,255 @@ ANNA PAY – Payroll Notification & Anomaly Alert System
 
 Project Link: https://ctc-negotiable-apg8jd6rs6hzywxmcqkp2y.streamlit.app/
 
-Team: CTC Negotiable
 
-Sprint Duration: 48 Hours
+---
 
-Development Approach: Agile (Sprint 0 + Iterative Build)
+**Team:** CTC Negotiable  
+**Sprint Duration:** 48 Hours  
+**Development Approach:** Agile (Sprint 0 + Iterative Build)  
+**Status:** Submission Ready  
 
-Status: Submission Ready
+---
 
-1. Project Overview
+## 1. Project Overview
 
-This project implements a Notification & Anomaly Alert System for ANNA PAY, a payroll processing platform.
+This project implements a **Notification & Anomaly Alert System** for ANNA PAY, a payroll processing platform.
+
 The system monitors payroll activity, evaluates predefined business rules, and automatically triggers alerts when abnormal salary conditions are detected. Every alert is logged to ensure traceability and auditability.
+
 The objective is to transform payroll from a silent transactional system into an observable and accountable process.
 
-2. Problem Statement
+---
+
+## 2. Problem Statement
 
 Traditional payroll systems:
 
-Process salary
-
-Store payroll records
-
-Generate payslips
+- Process salary  
+- Store payroll records  
+- Generate payslips  
 
 However, they do not proactively detect anomalies or communicate unusual salary conditions.
 
 This can result in:
 
-Increased HR workload, 
-Delayed issue detection, 
-Reduced transparency, 
-Lower employee confidence
+- Increased HR workload  
+- Delayed issue detection  
+- Reduced transparency  
+- Lower employee confidence  
 
 Our solution introduces an intelligent notification layer to address these gaps.
 
-3. Product Vision
+---
+
+## 3. Product Vision
 
 To build a lightweight, event-driven notification system that:
 
-Monitors payroll activity, 
-Detects abnormal salary conditions, 
-Triggers alerts automatically, 
-Maintains a complete audit trail, 
-Scales toward enterprise-level usage
+- Monitors payroll activity  
+- Detects abnormal salary conditions  
+- Triggers alerts automatically  
+- Maintains a complete audit trail  
+- Scales toward enterprise-level usage  
 
-4. Sprint 0 Activities
+---
+
+## 4. Sprint 0 Activities
 
 Before implementation, the team clarified:
 
-Assumptions
+### Assumptions
+- Payroll is processed monthly  
+- Payroll execution generates structured salary data  
+- Employees and HR are key stakeholders  
+- Email is the primary notification channel  
 
-Payroll is processed monthly
-Payroll execution generates structured salary data
-Employees and HR are key stakeholders
-Email is the primary notification channel
+### Identified Risks
+- Silent payroll errors  
+- Duplicate payroll execution  
+- Alert flooding  
+- Missing anomaly detection  
+- Lack of audit traceability  
 
-Identified Risks
-
-Silent payroll errors
-Duplicate payroll execution
-Alert flooding
-Missing anomaly detection
-Lack of audit traceability
-
-Initial Backlog
-
-Salary threshold alert
-Salary spike detection
-Notification logging
-Payroll execution workflow
-Basic UI for interaction
+### Initial Backlog
+- Salary threshold alert  
+- Salary spike detection  
+- Notification logging  
+- Payroll execution workflow  
+- Basic UI for interaction  
 
 Sprint 0 ensured requirement clarity before development began.
 
-5. System Design Approach
+---
+
+## 5. System Design Approach
 
 The system follows an event-driven flow:
 
-Payroll data is persisted
-Business rules are evaluated
-Alerts are triggered if conditions match
-Every alert is logged
+1. Payroll data is persisted  
+2. Business rules are evaluated  
+3. Alerts are triggered if conditions match  
+4. Every alert is logged  
 
 This ensures:
 
-Decoupled rule logic
-Auditability
-Traceability
-Scalable design
+- Decoupled rule logic  
+- Auditability  
+- Traceability  
+- Scalable design  
 
-6. Business Rule Implementation
-Rule 1 – Low Salary Alert
+---
 
-If salary < 10,000 → Trigger alert
+## 6. Business Rule Implementation
 
-Purpose: Detect potential payroll processing errors.
+### Rule 1 – Low Salary Alert  
+If salary < 10,000 → Trigger alert  
 
-Rule 2 – Salary Spike Detection
+**Purpose:** Detect potential payroll processing errors.
 
-If salary change > 20% compared to previous month → Trigger alert
+---
 
-Purpose: Identify unusual payroll variations requiring validation.
+### Rule 2 – Salary Spike Detection  
+If salary change > 20% compared to previous month → Trigger alert  
+
+**Purpose:** Identify unusual payroll variations requiring validation.
 
 Rules are modular and extendable for future enhancements.
 
-7. Data Model
-Employee
+---
 
-id
-name
-email
+## 7. Data Model
 
-Payroll
+### Employee
+- id  
+- name  
+- email  
 
-id
-employee_id
-month
-salary
+### Payroll
+- id  
+- employee_id  
+- month  
+- salary  
 
-NotificationLog
+### NotificationLog
+- id  
+- employee_id  
+- message  
+- timestamp  
 
-id
-employee_id
-message
-timestamp
+**Design Principles:**
+- Minimal schema  
+- Historical payroll tracking  
+- Persistent audit logging  
+- Extensibility  
 
-Design Principles:
+---
 
-Minimal schema
-Historical payroll tracking
-Persistent audit logging
-Extensibility
+## 8. Architecture Overview
 
-8. Architecture Overview
+**Technology Stack:**
+- Python  
+- Streamlit (UI Layer)  
+- SQLite (Persistence Layer)  
 
-Technology Stack:
-
-Python
-Streamlit (UI Layer)
-SQLite (Persistence Layer)
-
-Logical Separation:
-
-UI Layer → User interaction
-Rule Engine → Business logic
-Data Layer → Database operations
-Logging Layer → Notification audit tracking
+**Logical Separation:**
+- UI Layer → User interaction  
+- Rule Engine → Business logic  
+- Data Layer → Database operations  
+- Logging Layer → Notification audit tracking  
 
 Even within a compact implementation, separation of concerns is maintained.
 
-9. Agile Role Execution
-Business Analyst (BA)
+---
 
-Responsibilities:
+## 9. Agile Role Execution
 
-Defined problem scope
-Identified stakeholders
-Converted requirements into structured user stories
-Framed business rules
-Identified operational risks
-Prioritized backlog
+### Business Analyst (BA)
 
-Impact: Ensured structured requirement understanding before coding.
+**Responsibilities:**
+- Defined problem scope  
+- Identified stakeholders  
+- Converted requirements into structured user stories  
+- Framed business rules  
+- Identified operational risks  
+- Prioritized backlog  
 
-Developer
+### User Stories Defined by BA
 
-Responsibilities:
+- As an employee, I want to receive an alert if my salary is unusually low so that I can immediately raise a concern.
+- As HR, I want to be notified if a salary increases or decreases drastically so that I can validate payroll accuracy.
+- As HR, I want a log of all triggered alerts so that payroll decisions remain traceable and auditable.
+- As a payroll administrator, I want abnormal salary conditions to be detected automatically so that manual monitoring is reduced.
 
-Designed event-driven payroll flow
-Implemented rule engine logic
-Designed database schema
-Integrated logging mechanism
-Built Streamlit UI
-Handled edge cases
+**Impact:** Ensured structured requirement understanding before coding.
 
-Impact: Delivered a scalable and logically structured system.
+---
 
-Tester
+### Developer
 
-Responsibilities:
+**Responsibilities:**
+- Designed event-driven payroll flow  
+- Implemented rule engine logic  
+- Designed database schema  
+- Integrated logging mechanism  
+- Built Streamlit UI  
+- Handled edge cases  
 
-Validated rule trigger accuracy
-Tested threshold and spike scenarios
-Verified normal payroll runs
-Confirmed log persistence
-Checked invalid employee handling
+**Impact:** Delivered a scalable and logically structured system.
 
-Impact: Ensured system reliability and predictable behavior.
+---
 
-10. Testing Strategy
-Functional Testing
+### Tester
 
-Correct rule trigger validation
-Correct alert message generation
-Proper logging behavior
-Edge Case Testing
-First payroll execution
-Consecutive payroll runs
-Salary spike from zero base
-Invalid employee ID
+**Responsibilities:**
+- Validated rule trigger accuracy  
+- Tested threshold and spike scenarios  
+- Verified normal payroll runs  
+- Confirmed log persistence  
+- Checked invalid employee handling  
+
+**Impact:** Ensured system reliability and predictable behavior.
+
+---
+
+## 10. Testing Strategy
+
+### Functional Testing
+- Correct rule trigger validation  
+- Correct alert message generation  
+- Proper logging behavior  
+
+### Edge Case Testing
+- First payroll execution  
+- Consecutive payroll runs  
+- Salary spike from zero base  
+- Invalid employee ID  
 
 The system is structured to handle high-volume payroll scenarios.
 
-11. Success Metrics (Target)
+---
 
-99% alert reliability
-Alert generation within seconds
-Reduction in HR payroll queries
+## 11. Success Metrics (Target)
 
-ero silent anomaly scenarios
+- 99% alert reliability  
+- Alert generation within seconds  
+- Reduction in HR payroll queries  
+- Zero silent anomaly scenarios  
 
-12. Future Enhancements
+---
 
-Multi-channel notifications (SMS / Push)
-User-configurable alert preferences
-Retry mechanism with exponential backoff
-Analytics dashboard
-AI-based anomaly detection
-Integration into full ANNA PAY ecosystem
+## 12. Future Enhancements
 
-13. How to Run Locally
+- Multi-channel notifications (SMS / Push)  
+- User-configurable alert preferences  
+- Retry mechanism with exponential backoff  
+- Analytics dashboard  
+- AI-based anomaly detection  
+- Integration into full ANNA PAY ecosystem  
 
-Install dependencies:
+---
 
-pip install -r requirements.txt
+## 13. How to Run Locally
 
-Run application:
-
-streamlit run app.py
-
-Open in browser:
-
-http://localhost:8501
-
-14. Project Philosophy
-
-This project demonstrates:
-Requirement-first thinking
-Event-driven system design
-Risk-aware planning
-Structured Agile execution
-Observability by design
-
-The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
-
-
-
-
-
-
+### Install dependencies:
 
