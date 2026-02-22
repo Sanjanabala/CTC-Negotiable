@@ -45,7 +45,7 @@ Monitors payroll activity,
 Detects abnormal salary conditions, 
 Triggers alerts automatically, 
 Maintains a complete audit trail, 
-Scales toward enterprise-level usage, 
+Scales toward enterprise-level usage
 
 4. Sprint 0 Activities
 
@@ -246,6 +246,7 @@ Structured Agile execution
 Observability by design
 
 The focus was not just sending notifications, but building a scalable payroll intelligence layer aligned with enterprise practices.
+
 
 
 
